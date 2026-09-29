@@ -2,9 +2,11 @@
 name = "bandwidth-throttler"
 version = "0.1.0"
 edition = "2024"
+default-run = "bandwidth-throttler"
 
 [dependencies]
-tokio = { version = "1", features = ["io-util", "macros", "net", "rt-multi-thread", "sync", "time"] }
+nix = { version = "0.30", features = ["signal", "process", "user"] }
+tokio = { version = "1", features = ["io-util", "macros", "net", "process", "rt-multi-thread", "signal", "sync", "time"] }
 
 [dev-dependencies]
 tokio = { version = "1", features = ["test-util"] }
